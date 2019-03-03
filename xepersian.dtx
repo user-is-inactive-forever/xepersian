@@ -215,7 +215,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11007}
+%% \CheckSum{11025}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -3918,10 +3918,24 @@ Persian typesetting in XeLaTeX]
 \bidi@newrobustcmd*{\rl}[1]{\RLE{\setpersianfont#1}}
 \def\latin{\LTR\LatinAlphs\@RTL@footnotefalse\resetlatinfont}
 \def\endlatin{\endLTR}
-\newenvironment{latin*}{\latin}{\endlatin\@endpetrue}
+\newenvironment{latin*}{\latin
+  \everypar{%
+    {\setbox\z@\lastbox
+      \ifvoid\z@
+        \kern-\parindent
+    \fi}%
+  }%
+}{\endlatin\@endpetrue}
 \def\persian{\RTL\PersianAlphs\@RTL@footnotetrue\setpersianfont}
 \def\endpersian{\endRTL}
-\newenvironment{persian*}{\persian}{\endpersian\@endpetrue}
+\newenvironment{persian*}{\persian
+  \everypar{%
+    {\setbox\z@\lastbox
+      \ifvoid\z@
+        \kern-\parindent
+    \fi}%
+  }%
+}{\endpersian\@endpetrue}
 \newenvironment{latinitems}{\begin{LTRitems}\LatinAlphs\@RTL@footnotefalse\resetlatinfont}{\end{LTRitems}}
 \newenvironment{persianitems}{\begin{RTLitems}\PersianAlphs\@RTL@footnotetrue\setpersianfont}{\end{RTLitems}}
 \let\originaltoday=\today
