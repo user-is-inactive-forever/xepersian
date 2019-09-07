@@ -21,7 +21,7 @@ A few sentences describing the overall goals of the pull request's commits.
 
 ## Todos
 - [ ] Relevant to the `bidi` package
-- [ ] [The `bidi` package issue tracker](https://github.com/bidirtex/bidi/issues) has been searched for similar issues?
+- [ ] [The `bidi` package issue tracker](https://github.com/vafakhalighi/bidi/issues) has been searched for similar issues?
 - [ ] Issue tracker has been searched for similar issues?
 - [ ] Links to <tex.stackexchange.com> discussion if appropriate
 - [ ] Links to <qa.parsilatex.com> discussion if appropriate
